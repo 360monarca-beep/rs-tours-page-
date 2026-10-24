@@ -1,0 +1,3 @@
+(()=>{'use strict';const nav=document.querySelector('.site-nav');if(!nav)return;const home=location.pathname.endsWith('/')||location.pathname.endsWith('/index.html')||location.pathname.split('/').pop()==='index.html';if(home){document.body.classList.add('rs15-home');const update=()=>nav.classList.toggle('rs15-scrolled',window.scrollY>70);update();window.addEventListener('scroll',update,{passive:true});}
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.cat-card,.featured-card,.rs12-card,.exc-row,.rs14-cinema-content').forEach(el=>el.classList.add('rs15-reveal'));}
+})();

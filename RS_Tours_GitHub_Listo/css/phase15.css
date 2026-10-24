@@ -1,0 +1,19 @@
+/* Fase 15 — navegación cinematográfica y microinteracciones */
+body.rs15-home .site-nav{position:absolute;top:0;left:0;right:0;width:100%;background:linear-gradient(180deg,rgba(4,30,43,.82),rgba(4,30,43,0));box-shadow:none;z-index:9000;color:#fff;transition:background .3s,box-shadow .3s,padding .3s;flex-wrap:nowrap}
+body.rs15-home .site-nav .brand,body.rs15-home .site-nav .links>a:not(.btn){color:#fff;text-shadow:0 1px 5px #001b2380}
+body.rs15-home .site-nav .lang-wrap select{background:#ffffffed}
+body.rs15-home .site-nav.rs15-scrolled{position:fixed;background:rgba(5,48,58,.97);box-shadow:0 8px 28px #001c2b33;padding-top:8px;padding-bottom:8px;backdrop-filter:blur(12px)}
+body.rs15-home .hero{min-height:92svh}
+body.rs15-home .hero-content{padding-top:110px}
+body.rs15-home .site-nav .btn{background:#ffc26a;color:#092d39}
+.site-nav .links>a:not(.btn){position:relative;transition:color .2s ease}
+.site-nav .links>a:not(.btn)::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:#ffc26a;transform:scaleX(0);transform-origin:left;transition:transform .24s ease}
+.site-nav .links>a:not(.btn):hover::after,.site-nav .links>a:not(.btn):focus-visible::after{transform:scaleX(1)}
+.cat-card,.featured-card,.rs12-card,.exc-row{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}
+@media(hover:hover){.cat-card:hover,.featured-card:hover,.rs12-card:hover,.exc-row:hover{transform:translateY(-7px);box-shadow:0 20px 44px #0733442b}.featured-card:hover img,.rs12-card:hover img{transform:scale(1.045)}}
+.featured-card img,.rs12-card img{transition:transform .45s ease}
+.rs15-reveal{animation:rs15-arrive .6s both;animation-timeline:view();animation-range:entry 0% entry 22%}
+@keyframes rs15-arrive{from{opacity:.5;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:850px){body.rs15-home .site-nav{padding:12px 4%;flex-wrap:nowrap}body.rs15-home .site-nav .links{background:#073f48}body.rs15-home .site-nav .links a:not(.btn){color:white}body.rs15-home .hero-content{padding-top:125px}.rs13-mobile-menu{flex-shrink:0}}
+@media(max-width:480px){body.rs15-home .site-nav .brand{font-size:.9rem}body.rs15-home .hero{min-height:82svh}}
+@media(prefers-reduced-motion:reduce){.rs15-reveal{animation:none!important}.cat-card,.featured-card,.rs12-card,.exc-row,.featured-card img,.rs12-card img{transition:none!important}}
