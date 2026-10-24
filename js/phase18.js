@@ -1,0 +1,8 @@
+(()=>{'use strict';
+const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+const videos=[...document.querySelectorAll('video.hero-video,video.rs14-cinema-video')];
+const observer='IntersectionObserver'in window?new IntersectionObserver(entries=>{for(const e of entries){const v=e.target;if(!e.isIntersecting||reduce.matches||v.dataset.rs18Paused==='yes'){v.pause();continue}const p=v.play();if(p&&p.catch)p.catch(()=>{});}}, {threshold:.16}):null;
+for(const v of videos){v.muted=true;v.playsInline=true;if(reduce.matches){v.pause();v.removeAttribute('autoplay')}if(observer)observer.observe(v);const parent=v.closest('.hero,.rs14-cinema');if(!parent)continue;const btn=document.createElement('button');btn.type='button';btn.className='rs18-video-control';btn.setAttribute('aria-label','Pausar video decorativo');btn.textContent='❚❚ Pausar video';btn.addEventListener('click',()=>{const paused=v.dataset.rs18Paused==='yes';v.dataset.rs18Paused=paused?'no':'yes';if(paused){const p=v.play();if(p&&p.catch)p.catch(()=>{});btn.textContent='❚❚ Pausar video';btn.setAttribute('aria-label','Pausar video decorativo')}else{v.pause();btn.textContent='▶ Reproducir video';btn.setAttribute('aria-label','Reproducir video decorativo')}});parent.append(btn)}
+reduce.addEventListener?.('change',e=>{if(e.matches)videos.forEach(v=>v.pause())});
+for(const a of document.querySelectorAll('a[target="_blank"]')){const rel=new Set((a.getAttribute('rel')||'').split(/\s+/).filter(Boolean));rel.add('noopener');rel.add('noreferrer');a.setAttribute('rel',[...rel].join(' '))}
+})();

@@ -1,0 +1,31 @@
+
+/* RS Tours — editorial experience detail */
+body:has(.tour-page){background:#f7f9f7;color:#123b3b}
+body:has(.tour-page) .site-nav{background:#073c42!important;position:sticky;top:0;z-index:90;backdrop-filter:blur(16px)}
+.tour-page{max-width:1320px;padding:34px clamp(16px,4vw,58px) 110px}
+.tour-back{color:#16766d;font-size:.94rem;text-decoration:none}
+.tour-layout{grid-template-columns:minmax(0,1.18fr) minmax(340px,.82fr);gap:clamp(26px,4vw,70px)}
+.tour-photo{width:100%;height:min(58vw,600px);max-height:600px;object-fit:cover;border-radius:22px;box-shadow:0 25px 55px #173c3925;cursor:zoom-in}
+.tour-information h1{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.035em;font-weight:650;font-size:clamp(2.5rem,5vw,4.8rem);line-height:1.05;color:#073f3b}
+.tour-eyebrow{letter-spacing:.2em;color:#aa7946;font-size:.76rem}
+.tour-description{color:#526c6a;line-height:1.85;font-size:1.08rem}
+.tour-price{font-size:1.9rem;color:#076f63;margin:14px 0 22px}
+.tour-price::before{content:'Precio publicado · ';font-size:.8rem;letter-spacing:.03em;color:#6c7774;font-weight:500;display:block}
+.tour-features{background:#edf3ef;border:1px solid #dbe9e1;border-radius:18px;padding:23px}
+.tour-features h2{font-family:Georgia,serif;font-size:1.4rem;color:#0c4942}
+.tour-request{border:1px solid #dce9e2;border-radius:20px;box-shadow:0 14px 50px #0c4d4212;padding:clamp(20px,3vw,32px);scroll-margin-top:110px}
+.tour-request h2{font-family:Georgia,serif;font-size:1.7rem;color:#124b44}
+.tour-request input:focus-visible,.tour-request textarea:focus-visible{outline:2px solid #087f76;outline-offset:2px}
+.tour-request button[type=submit]{background:#086c63;color:white;border:0;border-radius:11px;padding:15px;font-weight:750;cursor:pointer}
+.tour-request button[type=submit]:hover{background:#064f49}
+.rs-detail-bar{display:flex;gap:10px;align-items:center;justify-content:space-between;margin:20px 0 30px;flex-wrap:wrap}
+.rs-detail-bar a,.rs-detail-bar button{border:1px solid #c5d9d1;background:white;border-radius:99px;color:#17564f;font:inherit;font-size:.9rem;font-weight:650;padding:10px 16px;cursor:pointer;text-decoration:none}
+.rs-detail-bar a:hover,.rs-detail-bar button:hover{background:#e7f3ed}
+.rs-gallery{margin:50px 0 0}.rs-gallery h2,.rs-related h2{font:500 clamp(1.8rem,3vw,2.5rem) Georgia,serif;color:#0b4b44;margin:0 0 12px}.rs-gallery p,.rs-related p{color:#6b7974}
+.rs-gallery-grid{display:grid;grid-template-columns:1.65fr 1fr 1fr;gap:14px;margin-top:20px}.rs-gallery-grid button{border:0;background:transparent;padding:0;cursor:zoom-in;overflow:hidden;border-radius:17px;aspect-ratio:4/3}.rs-gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .35s}.rs-gallery-grid button:hover img{transform:scale(1.045)}
+.rs-related{margin:64px 0 0}.rs-related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:20px}.rs-related-card{display:block;overflow:hidden;background:white;border:1px solid #e0e9e2;border-radius:18px;text-decoration:none;color:#134c44;box-shadow:0 8px 30px #123d3210}.rs-related-card img{width:100%;height:190px;object-fit:cover}.rs-related-card span{display:block;padding:16px 18px;font-weight:750}.rs-related-card small{display:block;color:#08766c;font-weight:600;margin-top:5px}
+.rs-lightbox{position:fixed;inset:0;z-index:10020;background:#031d20ef;display:grid;place-items:center;padding:50px 16px 30px}.rs-lightbox[hidden]{display:none}.rs-lightbox img{max-width:min(100%,1100px);max-height:82vh;object-fit:contain;border-radius:8px}.rs-lightbox button{position:absolute;right:22px;top:12px;border:0;background:transparent;color:white;font-size:36px;cursor:pointer}
+.rs-sticky-book{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:95;display:none;background:#073f3c;color:white;padding:12px 15px;border-radius:18px;box-shadow:0 12px 40px #0005;align-items:center;gap:20px;width:min(500px,calc(100% - 26px));justify-content:space-between}.rs-sticky-book a{background:#e5b76b;color:#073b39;text-decoration:none;font-weight:800;padding:10px 17px;border-radius:11px}.rs-sticky-book strong{font-size:.9rem}
+@media(max-width:900px){.tour-layout{grid-template-columns:1fr}.tour-photo{height:55vw;min-height:280px}.rs-gallery-grid{grid-template-columns:1fr 1fr}.rs-gallery-grid button:first-child{grid-column:span 2;aspect-ratio:16/9}.rs-related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rs-sticky-book{display:flex}}
+@media(max-width:560px){.tour-page{padding:20px 15px 90px}.tour-photo{height:340px;min-height:0}.tour-information h1{font-size:2.8rem}.rs-related-grid{grid-template-columns:1fr}.rs-gallery-grid{gap:8px}.rs-gallery-grid button{border-radius:10px}.rs-sticky-book{bottom:8px}}
+@media(prefers-reduced-motion:reduce){.rs-gallery-grid img{transition:none}}

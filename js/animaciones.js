@@ -1,0 +1,1 @@
+document.querySelectorAll('.exc-row').forEach(row=>row.classList.add('ready'));
